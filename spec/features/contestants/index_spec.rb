@@ -20,22 +20,22 @@ RSpec.describe 'contestant index page' do
     it 'should have the names of every contestant' do
       visit "/contestants"
 
-      within("contestant_#{@jay.id}") do
+      within("#contestant_#{@jay.id}") do
         expect(page).to have_content("Jay McCarroll")
       end
 
-      within("contestant_#{@gretchen.id}") do
+      within("#contestant_#{@gretchen.id}") do
         expect(page).to have_content("Gretchen Jones")
       end
     end
     it 'should have a list of projects each contestant has worked on under their name' do
       visit "/contestants"
 
-      within("contestant_#{@jay.id}") do
+      within("#contestant_#{@jay.id}") do
         expect(page).to have_content("Projects: Litfit, News Chic")
       end
 
-      within("contestant_#{@gretchen.id}") do
+      within("#contestant_#{@gretchen.id}") do
         expect(page).to have_content("Projects: Upholstery Tuxedo")
       end
     end
