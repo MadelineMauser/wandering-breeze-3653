@@ -7,17 +7,17 @@ RSpec.describe 'project show page' do
       @lit_fit = @furniture_challenge.projects.create(name: "Litfit", material: "Lamp")
     end
     it 'should have the project name' do
-      visit "/projects/:id"
+      visit "/projects/#{@lit_fit.id}"
 
       expect(page).to have_content("Litfit")
     end
     it 'should have the project material' do
-      visit "/projects/:id"
+      visit "/projects/#{@lit_fit.id}"
 
-      expect(page).to have_content("Material: Lamp Shade")
+      expect(page).to have_content("Material: Lamp")
     end
     it 'should have the project theme' do
-      visit "/projects/:id"
+      visit "/projects/#{@lit_fit.id}"
 
       expect(page).to have_content("Challenge Theme: Apartment Furnishings")
     end
