@@ -8,4 +8,5 @@ belongs_to :project
 
   def self.project_contestant_count(project_id)
     ContestantProject.where(project_id: "#{project_id}").size
+  end
 end
